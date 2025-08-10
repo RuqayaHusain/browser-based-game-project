@@ -2,6 +2,15 @@
 
 A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The goal is to slide numbered tiles into the correct order by moving them into the empty space. This project focuses on logic, grid manipulation, and user interaction using core web technologies.
 
+![Game Preview/Logo] <!-- screenshot of system will appear here -->
+
+---
+
+
+## 🌐 Live Demo 
+
+<!-- demo link will appear here -->
+
 ---
 
 ## 📌 Project Overview
@@ -36,37 +45,44 @@ A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The
    - Allow only tiles adjacent to the empty space to move.
    - Swap the tile and the empty space on click.
 
-4. **Win Condition Check:**  
-   - After each move, check if the tiles are in the correct order.
-
-5. **Extra Features (optional):**  
-   - Add restart button.
-   - Add animations or move counter.
-
----
-
-## 🌐 Live Demo
+4. **Win & Lose Condition Check:**  
+   - After each move, check if the tiles are in the correct order to detect a win.  
+   - Track the number of moves and if it exceeds **60 moves**, end the game with a losing message.
 
 
 ---
 
 ## 🎮 How to Play
 
-1. A shuffled 3x3 grid appears when the game loads.
-2. Click a tile next to the empty space to slide it.
-3. Arrange the numbers from **1 to 8**, with the empty space in the bottom-right corner.
-4. You'll get a message when you win!
+1. A shuffled 3x3 grid appears when the game loads.  
+2. Click a tile next to the empty space to slide it.  
+3. Arrange the numbers from **1 to 8**, with the empty space in the bottom-right corner.  
+4. You have a **maximum of 60 moves** to solve the puzzle.  
+5. The move counter is displayed during the game so you can keep track.  
+6. If you exceed 60 moves, the game ends and you lose.  
+7. You'll get a message when you win or lose!
+
 
 ---
 
 ## ✨ Features
 
-- ✅ Random shuffling on page load
-- 🖱️ Clickable tiles that slide smoothly
-- ✅ Movement only if the tile is adjacent to the empty space
-- 🏁 Win detection and notification
-- 🔄 Restart button
+- ✅ Random shuffling on page load  
+- 🖱️ Clickable tiles that slide smoothly  
+- ✅ Movement only if the tile is adjacent to the empty space  
+- 🔢 Move counter displayed (max 60 moves allowed)  
+- 🛑 Losing condition if moves exceed 60  
+- 🏁 Win detection  
+- 🔄 Restart button  
 - 💻 Mobile-responsive design
+
+---
+
+## 💡 Future Improvements
+
+- 🎵 Sound effects  
+- 💾 Save best scores using localStorage  
+- 🏆 Leaderboard
 
 ---
 
@@ -79,10 +95,11 @@ A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The
 ---
 
 ## 📁 File Structure
-
+```plaintext
 sliding-puzzle-game/
 │
-├── index.html # Game layout
-├── style.css # Game styling
-├── script.js # Game logic and interactivity
-└── README.md # Project documentation
+├── index.html   # Game layout
+├── style.css    # Game styling
+├── script.js    # Game logic and interactivity
+└── README.md    # Project documentation
+```
