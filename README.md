@@ -97,8 +97,10 @@ A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The
 ```plaintext
 sliding-puzzle-game/
 │
-├── index.html   # Game layout
-├── style.css    # Game styling
-├── script.js    # Game logic and interactivity
-└── README.md    # Project documentation
+├── index.html           # Game layout
+├── css/
+│   └── style.css        # Game styling
+├── js/
+│   └── app.js           # Game logic and interactivity
+└── README.md            # Project documentation
 ```
