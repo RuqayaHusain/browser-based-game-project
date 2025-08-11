@@ -74,7 +74,6 @@ A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The
 - 🛑 Losing condition if moves exceed 60  
 - 🏁 Win detection  
 - 🔄 Restart button  
-- 💻 Mobile-responsive design
 
 ---
 
