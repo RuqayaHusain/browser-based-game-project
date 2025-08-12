@@ -57,11 +57,11 @@ body {
   background: #f0f0f0;
 }
 
-.empty-tile {
+/* .empty-tile {
   background: rgb(204, 204, 204);
-}
+} */
 
-.gameMessage {
+.game-message {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
