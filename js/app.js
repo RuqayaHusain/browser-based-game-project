@@ -6,7 +6,7 @@ const numberOfTiles = gameSize * gameSize; //total number of tiles
 /*---------------------------- Variables (state) ----------------------------*/
 let board; //puzzle board array
 let movesLeft; //used to display the number of moves left
-let gameStatus; //win or loss
+let gameStatus; //win, loss, or InProgress
 
 
 
@@ -20,7 +20,14 @@ const resetBtnEl = document.querySelector('#reset');
 /*-------------------------------- Functions --------------------------------*/
 
 const init = () => {
-    
+    board = getRandomValueArray(); //shuffle puzzle
+    movesLeft = maxMoves; //set movesLeft to maxMoves (60)
+    gameStatus = 'InProgress'; //initial status = 'InProgress'
+    render(); //render game
+};
+
+const render = () => {
+
 };
 
 const getRandomValueArray = () => {
