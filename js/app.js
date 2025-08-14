@@ -4,7 +4,7 @@ const gameSize = 3; //represents 3 * 3 grid
 const numberOfTiles = gameSize * gameSize; //total number of tiles
 
 /*---------------------------- Variables (state) ----------------------------*/
-let board; //puzzle board array
+let board =[]; //puzzle board array
 let movesLeft; //used to display the number of moves left
 let gameStatus; //win, loss, or InProgress
 
@@ -23,11 +23,20 @@ const init = () => {
     board = getRandomValueArray(); //shuffle puzzle
     movesLeft = maxMoves; //set movesLeft to maxMoves (60)
     gameStatus = 'InProgress'; //initial status = 'InProgress'
+    gameMessageEl.innerText = '';
+    gameMessageEl.classList.add('hide');
+    resetBtnEl.classList.add('hide');
     render(); //render game
 };
 
 const render = () => {
-
+    puzzleBoardEl.innerHTML = '';
+    board.forEach(boardValue => { //generates the tile (div elements) using JS and assigns them a value from the borad array
+        const newTileEl = document.createElement('div');
+        newTileEl.classList.add('tile');
+        newTileEl.innerText = boardValue;
+        puzzleBoardEl.appendChild(newTileEl);
+    });
 };
 
 const getRandomValueArray = () => {
@@ -35,8 +44,9 @@ const getRandomValueArray = () => {
     for (let i = 1; i <= numberOfTiles; i++){ //will generate array from [1 ... 9]
         randomValuesArray.push(i);
     }
-    randomValuesArray = randomValuesArray.sort(() => Math.random() - 0.5);
+    return randomValuesArray = randomValuesArray.sort(() => Math.random() - 0.5);
 };
 
+init();
 /*----------------------------- Event Listeners -----------------------------*/
 

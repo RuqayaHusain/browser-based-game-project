@@ -81,3 +81,7 @@ body {
 #reset:hover {
   background: #54137cc9;
 }
+
+.hide {
+  display: none;
+}
