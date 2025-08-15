@@ -6,7 +6,7 @@ const numberOfTiles = gameSize * gameSize; //total number of tiles
 /*---------------------------- Variables (state) ----------------------------*/
 let board =[]; //puzzle board array
 let movesLeft; //used to display the number of moves left
-let gameStatus; //win, loss, or InProgress
+let gameStatus; //Win, Loss, or InProgress
 
 
 
@@ -23,20 +23,28 @@ const init = () => {
     board = getRandomValueArray(); //shuffle puzzle
     movesLeft = maxMoves; //set movesLeft to maxMoves (60)
     gameStatus = 'InProgress'; //initial status = 'InProgress'
-    gameMessageEl.innerText = '';
     gameMessageEl.classList.add('hide');
     resetBtnEl.classList.add('hide');
     render(); //render game
 };
 
 const render = () => {
-    puzzleBoardEl.innerHTML = '';
+    puzzleBoardEl.innerHTML = ''; //clears the board
     board.forEach(boardValue => { //generates the tile (div elements) using JS and assigns them a value from the borad array
+        
         const newTileEl = document.createElement('div');
         newTileEl.classList.add('tile');
-        newTileEl.innerText = boardValue;
-        puzzleBoardEl.appendChild(newTileEl);
+
+        if (boardValue !== numberOfTiles) { //if the tiles doesn't hold the last element number (9) set a value for it
+            newTileEl.innerText = boardValue;
+        } else { //title with value 9, should be hidden, by giving it a new class
+            newTileEl.classList.add('empty-tile');
+        }
+            puzzleBoardEl.appendChild(newTileEl);
+        
     });
+    movesCounterEl.innerText = `Moves Left: ${movesLeft}`; //updates the counter
+    updateGameMessage(); //sets the game message based on the game's status
 };
 
 const getRandomValueArray = () => {
@@ -44,7 +52,19 @@ const getRandomValueArray = () => {
     for (let i = 1; i <= numberOfTiles; i++){ //will generate array from [1 ... 9]
         randomValuesArray.push(i);
     }
-    return randomValuesArray = randomValuesArray.sort(() => Math.random() - 0.5);
+    randomValuesArray = randomValuesArray.sort(() => Math.random() - 0.5);
+
+    return randomValuesArray;
+};
+
+const updateGameMessage = () => { //checks the game status and updates the gameMessage element accordingly
+    if (gameStatus === 'Win') {
+        gameMessageEl.innerText = 'Congrats! You Have Won 🎉!';
+    } else if (gameStatus === 'Loss') {
+        gameMessageEl.innerText = 'Game Over 💀!';
+    } else {
+        gameMessageEl.innerText = '';
+    }
 };
 
 init();

@@ -57,9 +57,14 @@ body {
   background: #f0f0f0;
 }
 
-/* .empty-tile {
-  background: rgb(204, 204, 204);
-} */
+.empty-tile {
+  background: none;
+  cursor: default;
+}
+
+.empty-tile:hover {
+  background: none;
+}
 
 .game-message {
   font-size: 18px;
