@@ -1,15 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+  --border-color: rgb(213, 11, 139);
+  --text-color: rgb(251, 243, 193);
+  --text-color-mint: rgb(100, 226, 183);
+  --tile-color-dark02: rgba(180, 100, 190, 0.2);
+  --tile-color-dark03: rgba(180, 100, 190, 0.3);
+  --tile-color-dark06: rgba(180, 100, 190, 0.6);  
+  --tile-color-light: rgb(240, 170, 240);
+  --mint-glow: 0 0 6px rgb(100, 226, 183);
+  --bg-dark: rgb(20, 20, 30);
+  --bg-gradient: linear-gradient(180deg, rgb(25, 15, 35), rgb(10, 5, 15));
+  --highlight: rgb(255, 80, 180);
+  --accent-cyan: rgb(0, 220, 255);
+  --accent-yellow: rgb(255, 255, 100);
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Silkscreen", sans-serif;
   margin: 0;
-  padding: 20px;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+  color: var(--text-color);
 }
 
 #puzzle-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-items: center;
 }
 
@@ -20,72 +41,95 @@ body {
 
 #game-header h1 {
   margin: 0;
-  font-size: 24px;
-  color: #333;
+  font-size: 40px;
+  color: var(--text-color);
+  text-shadow: 0 0 2px var(--accent-yellow),
+               0 0 30px var(--accent-yellow),
+               0 0 40px var(--accent-yellow);
+  margin-bottom: 30px;
 }
 
-#counter p {
-  margin: 5px 0 0;
-  font-size: 16px;
-  font-weight: bold;
+#counter {
+  margin: 10px 20px;
+  font-size: 20px;
+  color: var(--text-color-mint);
 }
 
 .puzzle-board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
-  gap: 5px;
-  background: #ccc;
-  padding: 5px;
-  border-radius: 5px;
-  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--bg-dark);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--border-color),
+              0 0 30px var(--border-color);
 }
 
 .tile {
-  background: #fff;
+  background: var(--tile-color-dark02);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: bold;
+  color: var(--text-color);
+  border: 2px solid var(--tile-color-light);
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
-  border-radius: 5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px var(--tile-color),
+              inset 0 0 5px var(--tile-color-dark02);
 }
 
 .tile:hover {
-  background: #f0f0f0;
+  background: var(--tile-color-light);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px var(--tile-color-light),
+              0 0 25px var(--tile-color-light);
 }
 
 .empty-tile {
   background: none;
+  border: none;
   cursor: default;
+  box-shadow: none;
 }
 
 .empty-tile:hover {
   background: none;
+  box-shadow: none;
 }
 
-.game-message {
-  font-size: 18px;
+#game-message {
+  font-size: 20px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 15px 0;
+  color: var(--text-color-mint);
 }
 
 #reset {
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 14px;
   font-weight: bold;
-  background: #54137c54;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  background: var(--tile-color-dark02);
+  color: var(--text-color);
+  border: 2px solid var(--tile-color-dark02);
+  border-radius: 8px;
   cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px var(--tile-color-dark03);
+  transition: all 0.2s ease;
 }
 
 #reset:hover {
-  background: #54137cc9;
+  background: var(--tile-color-light);
+  color: var(--bg-dark);
+  box-shadow: 0 4px 12px var(--tile-color-dark06);
 }
+
 
 .hide {
   display: none;

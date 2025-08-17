@@ -13,7 +13,6 @@ let gameStatus; //Win, Loss, or InProgress
 /*------------------------ Cached Element References ------------------------*/
 const puzzleBoardEl = document.querySelector('.puzzle-board');
 const movesCounterEl = document.querySelector('#counter');
-// const tileEls = document.querySelectorAll('.tile');
 const gameMessageEl = document.querySelector('#game-message');
 const resetBtnEl = document.querySelector('#reset');
 
@@ -64,11 +63,11 @@ const getRandomValueArray = () => {
 const updateGameMessage = () => { //checks the game status and updates the gameMessage element accordingly
 
     if (gameStatus === 'Win') {
-        gameMessageEl.innerText = 'Congrats! You Have Won 🎉!';
+        gameMessageEl.innerText = 'Congrats! You Have Won 🕹️!';
         resetBtnEl.classList.remove('hide');
         gameMessageEl.classList.remove('hide');
     } else if (gameStatus === 'Loss') {
-        gameMessageEl.innerText = 'Game Over 💀!';
+        gameMessageEl.innerText = 'Game Over 👾!';
         resetBtnEl.classList.remove('hide');
         gameMessageEl.classList.remove('hide');
     } else {
