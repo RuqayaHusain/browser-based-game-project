@@ -1,12 +1,14 @@
 /*-------------------------------- Constants --------------------------------*/
-const maxMoves = 60;
-const gameSize = 3; //represents 3 * 3 grid
-const numberOfTiles = gameSize * gameSize; //total number of tiles
+
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board =[]; //puzzle board array
 let movesLeft; //used to display the number of moves left
 let gameStatus; //Win, Loss, or InProgress
+let gameLevel; //easy, medium, hard
+let gameSize; //changes based on the level of game. easy: 3, medium: 4, hard: 5
+let numberOfTiles; // = gameSize * gameSize
+let maxMoves; //changes based on the level of the game. easy: 60, medium: 100, hard: 150
 
 
 
@@ -15,13 +17,18 @@ const puzzleBoardEl = document.querySelector('.puzzle-board');
 const movesCounterEl = document.querySelector('#counter');
 const gameMessageEl = document.querySelector('#game-message');
 const resetBtnEl = document.querySelector('#reset');
+const levelSelectEl = document.querySelector('#level-select');
+const gameHeaderEl = document.querySelector('#game-header');
+const easyBtnEl = document.querySelector('#easy-btn');
+const mediumBtnEl = document.querySelector('#medium-btn');
+const hardBtnEl = document.querySelector('#hard-btn');
 
 /*-------------------------------- Functions --------------------------------*/
 
 const init = () => {
 
     board = getRandomValueArray(); //shuffle puzzle
-    movesLeft = maxMoves; //set movesLeft to maxMoves (60)
+    movesLeft = maxMoves; //set movesLeft to maxMoves
     gameStatus = 'InProgress'; //initial status = 'InProgress'
     gameMessageEl.classList.add('hide');
     resetBtnEl.classList.add('hide');
@@ -31,6 +38,7 @@ const init = () => {
 const render = () => {
 
     puzzleBoardEl.innerHTML = ''; //clears the board
+    puzzleBoardEl.classList.add(`grid-${gameSize}x${gameSize}`); //adding class that will change based on the game's level
     board.forEach(boardValue => { //generates the tile (div elements) using JS and assigns them a value from the borad array
         
         const newTileEl = document.createElement('div');
@@ -120,7 +128,53 @@ const checkGameStatus = () => {
   }
 };
 
+const levelSelection = (level) => {//based on the level specified by the user, it will set game's size, maxMoves, number of tiles
+    gameLevel = level;
+
+    if (level === 'easy') {
+        gameSize = 3;
+        maxMoves = 60;
+
+    } else if (level === 'medium') {
+        gameSize = 4;
+        maxMoves = 100;
+
+    } else {
+        gameSize = 5;
+        maxMoves = 150;
+
+    }
+
+    numberOfTiles = gameSize * gameSize;
+
+    levelSelectEl.classList.add('hide'); //hides the level selection
+    puzzleBoardEl.classList.remove('hide'); //will dislpay the puzzle borad
+    gameHeaderEl.classList.remove('hide'); //will display game header
+
+    init();
+};
+
 init();
 /*----------------------------- Event Listeners -----------------------------*/
-resetBtnEl.addEventListener('click', init);
+resetBtnEl.addEventListener('click', () => { //will display the level selection div, and hide the rest
+    levelSelectEl.classList.remove('hide');
+    puzzleBoardEl.innerHTML = '';
+    puzzleBoardEl.classList.add('hide');
+    movesCounterEl.innerText = '';
+    gameMessageEl.innerText = '';
+    gameMessageEl.classList.add('hide');
+    gameHeaderEl.classList.add('hide');
+    resetBtnEl.classList.add('hide');
+});
+
 puzzleBoardEl.addEventListener('click', handleClick);
+
+easyBtnEl.addEventListener('click', () => levelSelection('easy'));
+mediumBtnEl.addEventListener('click', () => levelSelection('medium'));
+hardBtnEl.addEventListener('click', () => levelSelection('hard'));
+
+/*----------------------------- Initial Setup -----------------------------*/
+puzzleBoardEl.classList.add('hide');
+gameHeaderEl.classList.add('hide');
+gameMessageEl.classList.add('hide');
+resetBtnEl.classList.add('hide');

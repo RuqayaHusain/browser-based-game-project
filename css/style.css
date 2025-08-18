@@ -57,8 +57,6 @@ body {
 
 .puzzle-board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
   gap: 8px;
   padding: 10px;
   background: var(--bg-dark);
@@ -108,6 +106,7 @@ body {
   font-weight: bold;
   margin: 15px 0;
   color: var(--text-color-mint);
+  text-align: center;
 }
 
 #reset {
@@ -133,4 +132,95 @@ body {
 
 .hide {
   display: none;
+}
+
+#level-select {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: var(--bg-dark);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--border-color), 0 0 30px var(--border-color);
+}
+
+#level-select h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 2px var(--accent-cyan),
+               0 0 10px var(--accent-cyan),
+               0 0 20px var(--accent-cyan);
+}
+
+#level-select button {
+  font-family: "Silkscreen", sans-serif;
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid var(--tile-color-light);
+  border-radius: 8px;
+  background: var(--tile-color-dark02);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px var(--tile-color-dark03);
+}
+
+#level-select button:hover {
+  background: var(--tile-color-light);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px var(--tile-color-light),
+              0 0 25px var(--tile-color-light);
+}
+
+.grid-3x3 {
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+}
+
+.grid-4x4 {
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: repeat(4, 90px);
+}
+
+.grid-5x5 {
+  grid-template-columns: repeat(5, 75px);
+  grid-template-rows: repeat(5, 75px);
+}
+
+
+@media (max-width: 767px) {
+
+  .grid-3x3 {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
+
+  .grid-4x4 {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+  }
+
+  .grid-5x5 {
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+  }
+
+  .tile {
+    font-size: 18px;
+  }
+
+  #game-header h1 {
+    font-size: 30px;
+  }
+
+  #counter {
+    font-size: 17px;
+  }
+
+  #game-message {
+    font-size: 15px;
+  }
 }
