@@ -193,34 +193,44 @@ body {
 
 @media (max-width: 767px) {
 
+  body {
+    padding: 10px;
+  }
+
+  .puzzle-board {
+    gap: 5px;
+    padding: 5px;
+  }
+
   .grid-3x3 {
-    grid-template-columns: repeat(3, 70px);
-    grid-template-rows: repeat(3, 70px);
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
   }
 
   .grid-4x4 {
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: repeat(4, 60px);
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(4, 50px);
   }
 
   .grid-5x5 {
-    grid-template-columns: repeat(5, 50px);
-    grid-template-rows: repeat(5, 50px);
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: repeat(5, 40px);
   }
 
   .tile {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #game-header h1 {
-    font-size: 30px;
+    font-size: 26px;
+    margin-bottom: 20px;
   }
 
   #counter {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   #game-message {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
