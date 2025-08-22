@@ -23,6 +23,7 @@ const hardBoards = [
   [6, 5, 9, 12, 3, 24, 1, 4, 18, 23, 7, 17, 2, 22, 25, 14, 10, 8, 21, 15, 16, 19, 13, 20, 11]
 ];
 
+const tileSlideSound = new Audio('../assets/tile-slide.mp3'); //defined on the golabl scope to avoid frequent creation
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board =[]; //puzzle board array
@@ -134,6 +135,9 @@ const handleClick = (event) => {
     if(isMoveValid(emptyTileIndex, clickedTileIndex)) {
         [board[clickedTileIndex], board[emptyTileIndex]] = [board[emptyTileIndex], board[clickedTileIndex]]; //swap
         movesLeft --;
+        /* tile slide sound will only be played if move is valid */
+        tileSlideSound.volume = .5;
+        tileSlideSound.play();
         checkGameStatus(); //checks for win or loss
         render();
     }
@@ -143,8 +147,14 @@ const checkGameStatus = () => {
         
     if (board.every((value, index) => value === index + 1)) { //checks if all values are in board array are in sequence
         gameStatus = 'Win';
+        const winSound = new Audio('../assets/win.mp3');
+        winSound.volume = .5;
+        winSound.play();
     } else if (movesLeft <= 0) {
         gameStatus = 'Loss';
+        const lossSound = new Audio('../assets/loss.mp3');
+        lossSound.volume = .5;
+        lossSound.play();
     }
 };
     
