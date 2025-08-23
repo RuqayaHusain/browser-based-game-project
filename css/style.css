@@ -21,6 +21,7 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--bg-gradient);
@@ -232,5 +233,28 @@ body {
 
   #game-message {
     font-size: 14px;
+  }
+
+  #level-select {
+    padding: 16px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+  }
+
+  #level-select h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  #level-select button {
+    display: block;
+    width: 90%;
+    max-width: 220px;
+    margin: 8px auto;
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 6px;
   }
 }

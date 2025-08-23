@@ -42,7 +42,6 @@ const movesCounterEl = document.querySelector('#counter');
 const gameMessageEl = document.querySelector('#game-message');
 const resetBtnEl = document.querySelector('#reset');
 const levelSelectEl = document.querySelector('#level-select');
-const gameHeaderEl = document.querySelector('#game-header');
 const easyBtnEl = document.querySelector('#easy-btn');
 const mediumBtnEl = document.querySelector('#medium-btn');
 const hardBtnEl = document.querySelector('#hard-btn');
@@ -65,7 +64,7 @@ const render = () => {
         } else { //title with value 9, should be hidden, by giving it a new class
             newTileEl.classList.add('empty-tile');
         }
-        // newTileEl.addEventListener('click', handleClick);
+
         puzzleBoardEl.appendChild(newTileEl);
         
     });
@@ -189,7 +188,7 @@ const levelSelection = (level) => {//based on the level specified by the user, i
         
     levelSelectEl.classList.add('hide'); //hides the level selection
     puzzleBoardEl.classList.remove('hide'); //will dislpay the puzzle borad
-    gameHeaderEl.classList.remove('hide'); //will display game header
+    movesCounterEl.classList.remove('hide'); //will display the counter
         
     init();
 };
@@ -200,9 +199,9 @@ const levelSelection = (level) => {//based on the level specified by the user, i
         puzzleBoardEl.innerHTML = '';
         puzzleBoardEl.classList.add('hide');
         movesCounterEl.innerText = '';
+        movesCounterEl.classList.add('hide');
         gameMessageEl.innerText = '';
         gameMessageEl.classList.add('hide');
-        gameHeaderEl.classList.add('hide');
         resetBtnEl.classList.add('hide');
 });
 
@@ -214,6 +213,6 @@ hardBtnEl.addEventListener('click', () => levelSelection('hard'));
 
 /*----------------------------- Initial Setup -----------------------------*/
 puzzleBoardEl.classList.add('hide');
-gameHeaderEl.classList.add('hide');
+movesCounterEl.classList.add('hide')
 gameMessageEl.classList.add('hide');
 resetBtnEl.classList.add('hide');
