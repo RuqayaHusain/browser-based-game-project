@@ -8,7 +8,7 @@ A classic **sliding tile puzzle** built using **HTML, CSS, and JavaScript**. The
 ### 🖥️ Desktop View
 <table>
   <tr>
-    <td><img src="https://i.ibb.co/Kx96Nknh/Screenshot-2025-08-22-at-11-05-30-PM.png" width="200"></td>
+    <td><img src="https://i.ibb.co/VWWSkQBp/Screenshot-2025-08-23-at-6-05-57-AM.png" width="200"></td>
     <td><img src="https://i.ibb.co/tTJg2wSR/Screenshot-2025-08-20-at-4-55-13-PM.png" width="200"></td>
     <td><img src="https://i.ibb.co/KzFVyyQJ/Screenshot-2025-08-22-at-11-08-05-PM.png" width="200"></td>
     <td><img src="https://i.ibb.co/LXKv7SFh/Screenshot-2025-08-22-at-11-08-15-PM.png" width="200"></td>
@@ -19,7 +19,7 @@ A classic **sliding tile puzzle** built using **HTML, CSS, and JavaScript**. The
 ### 📱 Mobile View
 <table>
   <tr>
-    <td><img src="https://i.ibb.co/6RdBrWj4/IMG-9874.png" width="150"></td>
+    <td><img src="https://i.postimg.cc/9QCLB578/IMG-CFF9-D49-DBF8-E-1.jpg" width="150"></td>
     <td><img src="https://i.ibb.co/23SrHbRQ/IMG-9875.png" width="150"></td>
     <td><img src="https://i.ibb.co/H96N99z/IMG-9876.png" width="150"></td>
     <td><img src="https://i.ibb.co/0p3DqLrx/IMG-9877.png" width="150"></td>
@@ -106,4 +106,8 @@ browser-based-game-project/
 
 - 🎨 **Color Palette**: [Color Hunt](https://colorhunt.co/)  
 - 📺 **Tutorial Reference**: [Sliding Puzzle Game Tutorial – YouTube](https://www.youtube.com/watch?v=0WZLdVH2VV4&t=1279s)  
-- 🔊 **Sound Effects**: Free-to-use sounds ([slide](https://freesound.org/people/LittleRobotSoundFactory/sounds/290384/), [loss](https://freesound.org/people/deleted_user_877451/sounds/76376/), and [win](https://freesound.org/people/interstellarcat/sounds/787559/)).  
+- 🔊 **Sound Effects**: Free-to-use sounds ([slide](https://freesound.org/people/LittleRobotSoundFactory/sounds/290384/), [loss](https://freesound.org/people/deleted_user_877451/sounds/76376/), and [win](https://freesound.org/people/interstellarcat/sounds/787559/)).
+- 💻 **Helpful References & Resources**:  
+  - [Stack Overflow](https://stackoverflow.com)  
+  - [MDN Web Docs](https://developer.mozilla.org/en-US/)  
+  - [W3Schools](https://www.w3schools.com/)
