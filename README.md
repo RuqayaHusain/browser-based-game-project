@@ -1,15 +1,37 @@
-# 🧩 Sliding Puzzle Game
+# 🧩 Sliding Blocks Game
 
-A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The goal is to slide numbered tiles into the correct order by moving them into the empty space. This project focuses on logic, grid manipulation, and user interaction using core web technologies.
+A classic **sliding tile puzzle** built using **HTML, CSS, and JavaScript**. The goal is to slide numbered tiles into the correct order by moving them into the empty space. The game includes multiple levels, a move counter, sound effects, and win/lose conditions.  
 
-![Game Preview/Logo] <!-- screenshot of system will appear here -->
+## 📸 Screenshots
+
+<!-- Desktop Screenshots -->
+### 🖥️ Desktop View
+<table>
+  <tr>
+    <td><img src="https://i.ibb.co/Kx96Nknh/Screenshot-2025-08-22-at-11-05-30-PM.png" width="200"></td>
+    <td><img src="https://i.ibb.co/tTJg2wSR/Screenshot-2025-08-20-at-4-55-13-PM.png" width="200"></td>
+    <td><img src="https://i.ibb.co/KzFVyyQJ/Screenshot-2025-08-22-at-11-08-05-PM.png" width="200"></td>
+    <td><img src="https://i.ibb.co/LXKv7SFh/Screenshot-2025-08-22-at-11-08-15-PM.png" width="200"></td>
+  </tr>
+</table>
+
+<!-- Mobile Screenshots -->
+### 📱 Mobile View
+<table>
+  <tr>
+    <td><img src="https://i.ibb.co/6RdBrWj4/IMG-9874.png" width="150"></td>
+    <td><img src="https://i.ibb.co/23SrHbRQ/IMG-9875.png" width="150"></td>
+    <td><img src="https://i.ibb.co/H96N99z/IMG-9876.png" width="150"></td>
+    <td><img src="https://i.ibb.co/0p3DqLrx/IMG-9877.png" width="150"></td>
+  </tr>
+</table>
+
 
 ---
 
+## 🌐 Live Demo  
 
-## 🌐 Live Demo 
-
-<!-- demo link will appear here -->
+Check out the live version of the game here: [Play Sliding Block Game](https://ruqayahusain.github.io/browser-based-game-project/)
 
 ---
 
@@ -18,89 +40,70 @@ A classic **3x3 sliding tile puzzle** built using HTML, CSS, and JavaScript. The
 - **Type**: Browser-based puzzle game  
 - **Technologies**: HTML5, CSS3, JavaScript (ES6)  
 - **Difficulty**: Beginner to Intermediate  
-- **Purpose**: To practice grid layout, DOM manipulation, and basic puzzle logic without using external libraries
-
----
-
-## 📋 Planning & Initialization
-
-### 🎯 Objectives
-
-- Build a functioning sliding puzzle that allows users to move tiles.
-- Ensure proper logic to restrict movement only to adjacent tiles.
-- Shuffle the board randomly on load and check for a win condition.
-- Keep the code modular and beginner-friendly.
-
-### 🗂️ Initial Steps
-
-1. **Grid Design (HTML + CSS):**  
-   - Create a 3x3 grid using Flexbox or CSS Grid.
-   - Each tile is a `<div>` element with a number or empty space.
-
-2. **Shuffling Algorithm (JavaScript):**  
-   - Store tile positions in an array.
-   - Randomly shuffle the array ensuring the puzzle is solvable.
-
-3. **Tile Movement Logic:**  
-   - Allow only tiles adjacent to the empty space to move.
-   - Swap the tile and the empty space on click.
-
-4. **Win & Lose Condition Check:**  
-   - After each move, check if the tiles are in the correct order to detect a win.  
-   - Track the number of moves and if it exceeds **60 moves**, end the game with a losing message.
-
-
----
-
-## 🎮 How to Play
-
-1. A shuffled 3x3 grid appears when the game loads.  
-2. Click a tile next to the empty space to slide it.  
-3. Arrange the numbers from **1 to 8**, with the empty space in the bottom-right corner.  
-4. You have a **maximum of 60 moves** to solve the puzzle.  
-5. The move counter is displayed during the game so you can keep track.  
-6. If you exceed 60 moves, the game ends and you lose.  
-7. You'll get a message when you win or lose!
-
+- **Purpose**: Practice grid logic, DOM manipulation, and puzzle mechanics
 
 ---
 
 ## ✨ Features
 
-- ✅ Random shuffling on page load  
-- 🖱️ Clickable tiles that slide smoothly  
-- ✅ Movement only if the tile is adjacent to the empty space  
-- 🔢 Move counter displayed (max 60 moves allowed)  
-- 🛑 Losing condition if moves exceed 60  
-- 🏁 Win detection  
-- 🔄 Restart button  
+- 🎚️ **Multiple difficulty levels**  
+  - Easy: 3x3  
+  - Medium: 4x4  
+  - Hard: 5x5  
+- 🔀 Randomly shuffled board each game (always solvable)  
+- 🖱️ Click a tile next to the empty space to slide  
+- 🔢 Move counter displayed on screen  
+- ⏳ Limited moves (varies by level) – if you run out, you lose  
+- 🏁 Win detection when the puzzle is solved  
+- 🎵 Sound effects for moves and victory  
+- 🔄 Restart button to play again instantly  
+
+---
+
+## 🎮 How to Play
+
+1. Choose a **difficulty level** (3x3, 4x4, or 5x5).  
+2. A shuffled puzzle will appear on the screen.  
+3. Click a tile next to the empty space to slide it.  
+4. Arrange the numbers in the correct order, with the empty space in the bottom-right corner.  
+5. You must solve the puzzle **before your moves run out**.  
+6. The game displays a **win message** if you succeed or a **loss message** if you fail.  
 
 ---
 
 ## 💡 Future Improvements
 
-- 🎵 Sound effects  
-- 💾 Save best scores using localStorage  
-- 🏆 Leaderboard
+- 🏆 Leaderboard & score tracking with `localStorage`  
+- 📱 Better mobile/touch support  
+- 🌈 More themes & animations  
 
 ---
 
 ## 🧰 Technologies Used
 
 - **HTML5** – Semantic layout for the grid and tiles  
-- **CSS3** – Styling, grid layout, and responsiveness  
-- **JavaScript (ES6)** – Game logic, user interaction, win checking
+- **CSS3** – Styling, arcade-inspired design, and responsiveness  
+- **JavaScript (ES6)** – Core game logic, tile movement, shuffling, and sound  
 
 ---
 
 ## 📁 File Structure
 ```plaintext
-sliding-puzzle-game/
+browser-based-game-project/
 │
-├── index.html           # Game layout
+├── index.html             # Game layout
 ├── css/
-│   └── style.css        # Game styling
+│   └── style.css          # Styling
 ├── js/
-│   └── app.js           # Game logic and interactivity
-└── README.md            # Project documentation
+│   └── app.js            # Game logic & interactivity
+├── assets/                # Game sounds
+│   ├── loss.mp3
+│   ├── tile-slide.mp3
+│   └── win.mp3
+└── README.md              # Project documentation
 ```
+## 🙏 Attribution & Credits
+
+- 🎨 **Color Palette**: [Color Hunt](https://colorhunt.co/)  
+- 📺 **Tutorial Reference**: [Sliding Puzzle Game Tutorial – YouTube](https://www.youtube.com/watch?v=0WZLdVH2VV4&t=1279s)  
+- 🔊 **Sound Effects**: Free-to-use sounds ([slide](https://freesound.org/people/LittleRobotSoundFactory/sounds/290384/), [loss](https://freesound.org/people/deleted_user_877451/sounds/76376/), and [win](https://freesound.org/people/interstellarcat/sounds/787559/)).  
